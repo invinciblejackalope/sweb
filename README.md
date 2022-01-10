@@ -1,21 +1,10 @@
 # SWeb - Android Simple Web Browser
 
-This is a small and simple WebView-based browser. Among its distinctive features are:
+Using Android Studio 2020.3.1.
+Emulator: Pixel 2 API 32.
+Some aspects of the browser have been deprecated in the newest version of Android Studio. No observed problems so far.
 
-- Night mode for websites (gray text on black background)
-- Adblocker, uses Easylist rule files
-- Log and display all HTTP requests made by a page, e.g., embedded picture, audio, video files
-
-Other features:
-- Bookmarks, including import and export to the standard bookmarks HTML file
-- Undo closed tab
-- Find text on page
-- Use a desktop user-agent
-
-### Download
-Download SWeb.apk from the [Releases](https://github.com/alandau/sweb/releases/latest) page.
-
-### License
-MIT
-
-If you find issues or want to contribute, please open a GitHub issue or pull request.
+Main browser code is in /app/src/main/java/landau/sweb/MainActivity.java.
+HTTP requests are logged in the variable `requestsLog`.
+Currently HTTP requests are displayed in a new browser window upon turning off `isLogRequests`.
+Plan to log to an external file (use code from ExceptionLogger).
