@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sweb.iml" filepath="$PROJECT_DIR$/sweb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sweb.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sweb.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mobile-tracking.iml" filepath="$PROJECT_DIR$/.idea/modules/mobile-tracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/mobile-tracking.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/mobile-tracking.app.iml" />
     </modules>
   </component>
 </project>
