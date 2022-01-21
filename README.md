@@ -14,7 +14,13 @@ Follow the instructions [here](https://developer.android.com/studio/run/emulator
 
 ## Run
 
-Select Run > Run 'app' > Pixel 2 API 32 and the emulator should pop up.
+Select Run > Run 'app' > Pixel 2 API 32 and the emulator should pop up. The app itself is called **SWeb Debug**.
+
+## Logging HTTP requests
+
+Currently, the app only logs the URL of each HTTP request.
+
+With the browser open, click the button on the bottom-right of the screen to bring up an "actions" panel. Check the box "Log requests" in order to begin logging HTTP requests, and uncheck the box in order to stop logging requests. Upon unchecking the box, the list of URLs will be written to an internal file called sweb-http.log. This file cannot be accessed from the Files app; to view the list of requests, either install [Android Debug Bridge](https://developer.android.com/studio/command-line/adb) or uncomment the line `Log.i(TAG, url);` to log the URLs in Android Studio.
 
 ## Notes
 
@@ -22,9 +28,5 @@ Some aspects of the browser have been deprecated in the newest version of Androi
 
 Main browser code is in /app/src/main/java/landau/sweb/MainActivity.java.
 
-HTTP requests are logged in the variable `requestsLog`.
-
-Currently HTTP requests are displayed in a new browser window upon turning off `isLogRequests`.
-
-Plan to log to an external file (use code from ExceptionLogger).
+Next goal: Appium integration using UIAutomator2. Following [this document](https://appium.io/docs/en/about-appium/getting-started/?lang=en) and [these samples](https://github.com/appium/appium/tree/master/sample-code/java/src).
 
