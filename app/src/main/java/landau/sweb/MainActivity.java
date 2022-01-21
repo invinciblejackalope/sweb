@@ -91,6 +91,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -1302,18 +1303,14 @@ public class MainActivity extends Activity {
                 requestsLog.clear();
             }
         } else {
-            // End logging, show result
-            StringBuilder sb = new StringBuilder("<title>Request Log</title><h1>Request Log</h1>");
-            for (String url : requestsLog) {
-                sb.append("<a href=\"");
-                sb.append(url);
-                sb.append("\">");
-                sb.append(url);
-                sb.append("</a><br><br>");
+            try (PrintWriter pw = new PrintWriter(new File(getApplicationContext().getFilesDir(), "sweb-http.log"))) {
+                for (String url : requestsLog) {
+                    pw.println(url);
+//                    Log.i(TAG, url);
+                }
+            } catch (IOException e1) {
+                Log.e(TAG, "IOException", e1);
             }
-            String base64 = Base64.encodeToString(sb.toString().getBytes(StandardCharsets.UTF_8), Base64.DEFAULT);
-            newTab("data:text/html;base64," + base64);
-            switchToTab(tabs.size() - 1);
         }
     }
 
